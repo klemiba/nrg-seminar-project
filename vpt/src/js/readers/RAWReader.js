@@ -47,7 +47,7 @@ readMetadata(handlers) {
     for (let i = 0; i < this.depth; i++) {
         metadata.modalities[0].placements.push({
             index: i,
-            position: { x: 0, y: 0, z: i }
+            position: { x: 0, y: 0, z: 0 }
         });
 
         metadata.blocks.push({
@@ -56,7 +56,7 @@ readMetadata(handlers) {
             dimensions: {
                 width  : this.width,
                 height : this.height,
-                depth  : 1
+                depth  : this.depth
             }
         });
     }

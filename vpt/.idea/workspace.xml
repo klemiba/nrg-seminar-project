@@ -2,17 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9f2c753-4fe1-40d5-b690-a9c27acdf6df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/glsl/mixins/Photon.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/glsl/mixins/Photon.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/glsl/renderers/MCMRenderer.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/glsl/renderers/MCMRenderer.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Volume.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Volume.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dialogs/VolumeLoadDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dialogs/VolumeLoadDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dialogs/renderers/MCMRendererDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dialogs/renderers/MCMRendererDialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/FastNoiseLite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/PerlinNoiseGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/TransferFunction (2).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/TransferFunction (3).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/VolumeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/VolumeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 1.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 10.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 100.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 2.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 20.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 3.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 30.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 4.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 40.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 5.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 50.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 6.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 60.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 7.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 70.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 8.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 80.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 9.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 90.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout 99.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/testout99.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/TransferFunction (2).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/TransferFunction (3).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumetricFluidProceduralGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumetricFluidProceduralGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 1.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 10.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 100.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 2.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 20.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 3.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 30.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 4.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 40.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 5.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 50.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 6.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 60.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 7.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 70.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 8.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 80.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 9.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 90.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout 99.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/testout99.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/glsl/shaders.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/glsl/shaders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/readers/RAWReader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/readers/RAWReader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/renderers/MCMRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/renderers/MCMRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uispecs/VolumeLoadDialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/uispecs/VolumeLoadDialog.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uispecs/renderers/MCMRendererDialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/uispecs/renderers/MCMRendererDialog.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +67,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -30,6 +77,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1sg06VGJ7k4VorgJFBLr1JiX0IO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1621278749886</updated>
       <workItem from="1621278751075" duration="25321000" />
-      <workItem from="1621352675632" duration="133000" />
+      <workItem from="1621352675632" duration="976000" />
+      <workItem from="1621358137592" duration="1290000" />
     </task>
     <servers />
   </component>

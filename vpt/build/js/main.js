@@ -397,7 +397,7 @@ readMetadata(handlers) {
     for (let i = 0; i < this.depth; i++) {
         metadata.modalities[0].placements.push({
             index: i,
-            position: { x: 0, y: 0, z: i }
+            position: { x: 0, y: 0, z: 0 }
         });
 
         metadata.blocks.push({
@@ -406,7 +406,7 @@ readMetadata(handlers) {
             dimensions: {
                 width  : this.width,
                 height : this.height,
-                depth  : 1
+                depth  : this.depth
             }
         });
     }
@@ -415,11 +415,9 @@ readMetadata(handlers) {
 }
 
 readBlock(block, handlers) {
-    //const sliceBytes = this.width * this.height * (this.bits / 8);
-    //const start = block * sliceBytes;
-    //const end = (block + 1) * sliceBytes;
-    const start = 0;
-    const end = this.width * this.height * this.depth * 4;
+    const sliceBytes = this.width * this.height * (this.bits / 8);
+    const start = block * sliceBytes;
+    const end = (block + 1) * sliceBytes;
     this._loader.readData(start, end, {
         onData: data => {
             handlers.onData && handlers.onData(data);
@@ -428,9 +426,6 @@ readBlock(block, handlers) {
 }
 
 readBlocks(block, id, handlers) {
-    //const sliceBytes = this.width * this.height * (this.bits / 8);
-    //const start = block * sliceBytes;
-    //const end = (block + 1) * sliceBytes;
     const start = id * this.width * this.height * this.depth * 4;
     const end = start + this.width * this.height * this.depth * 4;
     this._loader.readData(start, end, {
@@ -4654,9 +4649,11 @@ _integrateFrame() {
 
     gl.activeTexture(gl.TEXTURE4);
 
+    //
     this.iterations = Math.round(this.iterations);
     console.log("Iterations: " + this.iterations);
     gl.bindTexture(gl.TEXTURE_3D, this._volume.getTextureWithId(this.iterations));
+
     // gl.bindTexture(gl.TEXTURE_3D, this._volume.getTexture());
     gl.activeTexture(gl.TEXTURE5);
     gl.bindTexture(gl.TEXTURE_2D, this._environmentTexture);
