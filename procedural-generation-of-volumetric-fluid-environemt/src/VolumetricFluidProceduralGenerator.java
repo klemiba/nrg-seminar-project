@@ -221,7 +221,7 @@ class VolumeGenerator {
 
     // Deform water with perlin noise
     private void deformWater(){
-        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(981337);
+        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(156437);
         // fn.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
@@ -504,7 +504,7 @@ class VolumeGenerator {
 
     // Create RAW file from outputBytes array
     void createOutputFile(int id) throws IOException {
-            FileOutputStream fout = new FileOutputStream(".\\src\\output\\testout"+ id +".out");
+            FileOutputStream fout = new FileOutputStream(".\\generateVolume.out");
             fout.write(outputBytes);
             fout.close();
             System.out.println("Successfully generated output file.");

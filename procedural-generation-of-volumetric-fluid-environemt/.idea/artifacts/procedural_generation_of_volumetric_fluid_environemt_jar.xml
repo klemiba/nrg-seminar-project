@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="procedural-generation-of-volumetric-fluid-environemt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/procedural_generation_of_volumetric_fluid_environemt_jar</output-path>
+    <root id="archive" name="procedural-generation-of-volumetric-fluid-environemt.jar">
+      <element id="module-output" name="procedural-generation-of-volumetric-fluid-environemt" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/vecmath.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
