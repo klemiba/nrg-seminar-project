@@ -141,7 +141,7 @@ void main() {
         // voxData: pressure, gradient x, gradient y, gradient z
         vec4 volumeSample2 = texture(uVolume, photon.position);
         float currentPressure = volumeSample2.r;
-        vec3 gradient = vec3(volumeSample2.g -0.5, volumeSample2.b-0.5, volumeSample2.a-0.5) * 0.01;
+        vec3 gradient = vec3(volumeSample2.g, volumeSample2.b, volumeSample2.a) * 0.01;
 
         vec4 transferSample = texture(uTransferFunction, vec2(volumeSample2.r, length(gradient)));
         float muAbsorption = transferSample.a * uAbsorptionCoefficient;
