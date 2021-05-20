@@ -221,9 +221,8 @@ class VolumeGenerator {
 
     // Deform water with perlin noise
     private void deformWater(){
-        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(156437);
-        float min = 1000;
-        float max = 0;
+        //97997
+        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(544397);
         // fn.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
@@ -232,16 +231,11 @@ class VolumeGenerator {
                     float scalingFactor = 0.01f;
                     float noiseWeight = 75;
                     float perlinNoiseFactor = fn.noise3(x * scalingFactor, y * scalingFactor, z * scalingFactor);
-
                     voxArray[x][y][z] = waterPressure + perlinNoiseFactor * noiseWeight;
-                    if(voxArray[x][y][z] > max) max = voxArray[x][y][z];
-                    if(voxArray[x][y][z] < min) min = voxArray[x][y][z];
                 }
             }
         }
-        System.out.println("Min and max");
-        System.out.println(min);
-        System.out.println(max);
+
     }
 
     // Generate velocitiet with perlin noise
@@ -419,9 +413,6 @@ class VolumeGenerator {
         dx *= 100;
         dy *= 100;
         dz *= 100;
-        dx -= 0.5;
-        dy -= 0.5;
-        dz -= 0.5;
         return new float[]{dx, dy, dz};
     }
 
@@ -492,6 +483,9 @@ class VolumeGenerator {
 
         int count = size * size * size * 4 * currentIter;
 
+        float min = 10000;
+        float max = 0;
+
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
                 for(int z = 0; z < size; z++){
@@ -503,13 +497,19 @@ class VolumeGenerator {
                         float[] grad = computeGradientsScript(x, y, z);
                         //float[] grad2 = computeGradients(x, y, z);
                         outputBytes[count] = (byte)grad[0];
+                        if(outputBytes[count] > max) max = outputBytes[count];
+                        if(outputBytes[count] < min) min = outputBytes[count];
                         outputBytes[count + 1] = (byte)grad[1];
                         outputBytes[count + 2] = (byte)grad[2];
                         count += 3;
+
                     }
                 }
             }
         }
+        System.out.println("Min and max");
+        System.out.println(min);
+        System.out.println(max);
         //System.out.println(voxOutputArray[60][60][60]);
         System.out.println(".");
     }
