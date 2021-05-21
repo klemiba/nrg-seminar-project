@@ -63,10 +63,10 @@ class VolumeGenerator {
         while(simulating){
 
             updateBuffer();
-            diffuse(size, 0, voxArray, voxBuffer, 1f, 0.1f);
+            diffuse(size, 0, voxArray, voxBuffer, 0.2f, 1f);
 
             updateBuffer();
-            advect(size, voxArray, voxBuffer, uVelocityArray, vVelocityArray, wVelocityArray, 0.1f);
+            advect(size, voxArray, voxBuffer, uVelocityArray, vVelocityArray, wVelocityArray, 0.2f);
 
             updateOutputArray();
             overwriteFloor(groundPosition);
@@ -84,10 +84,13 @@ class VolumeGenerator {
 
     // Copy voxArray into voxBuffer
     private void updateBuffer(){
+        float[][][] tempArray = new float[size][size][size];
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
                 for(int z = 0; z < size; z++){
+                    //tempArray[x][y][z] = voxBuffer[x][y][z];
                     voxBuffer[x][y][z] = voxArray[x][y][z];
+                    //voxArray[x][y][z] = tempArray[x][y][z];
                 }
             }
         }
@@ -103,21 +106,23 @@ class VolumeGenerator {
                 }
             }
         }
+        //System.out.println("Gradient value: " + voxOutputArray[60][60][60]);
     }
 
     // J Stam methods:
 
     private void diffuse(int N, int b, float[][][] newArray, float[][][] oldArray, float dt, float diff){
+
         int nMax = N - 1;
         float a = dt*diff*nMax*nMax;
         for(int k = 0; k < 20; k++){
             for(int x = 1; x < nMax; x++){
                 for(int y = 1; y < nMax; y++){
                     for(int z = 1; z < nMax; z++){
-                        newArray[x][y][z] = (oldArray[x][y][z] + a *
-                                (newArray[x - 1][y][z] + newArray[x + 1][y][z] +
-                                newArray[x][y - 1][z] + newArray[x][y + 1][z] +
-                                newArray[x][y][z - 1] + newArray[x][y][z + 1]))
+                        voxArray[x][y][z] = (voxBuffer[x][y][z] + a *
+                                (voxArray[x - 1][y][z] + voxArray[x + 1][y][z] +
+                                        voxArray[x][y - 1][z] + voxArray[x][y + 1][z] +
+                                        voxArray[x][y][z - 1] + voxArray[x][y][z + 1]))
                                 / (1 + 6 * a);
 
                     }
@@ -173,14 +178,14 @@ class VolumeGenerator {
                     r1 = z - k0;
                     r0 = 1 - r1;
 
-                    newArray[i][j][k] = s0 * t0 * r0 * oldArray[i0][j0][k0] +
-                                        s0 * t1 * r0 * oldArray[i0][j1][k0] +
-                                        s1 * t0 * r0 * oldArray[i1][j0][k0] +
-                                        s1 * t1 * r0 * oldArray[i1][j1][k0] +
-                                        s0 * t0 * r1 * oldArray[i0][j0][k1] +
-                                        s0 * t1 * r1 * oldArray[i0][j1][k1] +
-                                        s1 * t0 * r1 * oldArray[i1][j0][k1] +
-                                        s1 * t1 * r1 * oldArray[i1][j1][k1];
+                    voxArray[i][j][k] = s0 * t0 * r0 * voxBuffer[i0][j0][k0] +
+                                        s0 * t1 * r0 * voxBuffer[i0][j1][k0] +
+                                        s1 * t0 * r0 * voxBuffer[i1][j0][k0] +
+                                        s1 * t1 * r0 * voxBuffer[i1][j1][k0] +
+                                        s0 * t0 * r1 * voxBuffer[i0][j0][k1] +
+                                        s0 * t1 * r1 * voxBuffer[i0][j1][k1] +
+                                        s1 * t0 * r1 * voxBuffer[i1][j0][k1] +
+                                        s1 * t1 * r1 * voxBuffer[i1][j1][k1];
                 }
             }
         }
@@ -222,7 +227,7 @@ class VolumeGenerator {
     // Deform water with perlin noise
     private void deformWater(){
         //97997
-        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(544397);
+        PerlinNoiseGenerator fn = new PerlinNoiseGenerator(744);
         // fn.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
@@ -232,6 +237,7 @@ class VolumeGenerator {
                     float noiseWeight = 75;
                     float perlinNoiseFactor = fn.noise3(x * scalingFactor, y * scalingFactor, z * scalingFactor);
                     voxArray[x][y][z] = waterPressure + perlinNoiseFactor * noiseWeight;
+                    voxBuffer[x][y][z] = waterPressure + perlinNoiseFactor * noiseWeight;
                 }
             }
         }
@@ -242,7 +248,7 @@ class VolumeGenerator {
     private void generateVelocities(){
         PerlinNoiseGenerator fnu = new PerlinNoiseGenerator(567547);
         PerlinNoiseGenerator fnv = new PerlinNoiseGenerator(345634);
-        PerlinNoiseGenerator fnw = new PerlinNoiseGenerator(456345);
+        PerlinNoiseGenerator fnw = new PerlinNoiseGenerator(4545);
 
         float[][][] velocityArray = new float[size][size][size];
         float vMin = 1000;
@@ -273,7 +279,7 @@ class VolumeGenerator {
         }
         float min = 100;
         float max = 0;
-        System.out.println("vMax vMin diff: " + wMax + " " +  wMin);
+        //System.out.println("vMax vMin diff: " + wMax + " " +  wMin);
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
                 for(int z = 0; z < size; z++){
@@ -284,6 +290,9 @@ class VolumeGenerator {
                         uOffset = uMin;
                     uVelocityArray[x][y][z] += uOffset;
                     uVelocityArray[x][y][z] *= (1/ Math.abs(uMax - uMin));
+                    uVelocityArray[x][y][z] -= 0.5f;
+                    uVelocityArray[x][y][z] *= 2f;
+                    uVelocityArray[x][y][z] = 0;
                     //uVelocityArray[x][y][z] -= 0.5f;
                     float vOffset = -1 * vMin;
                     if(vMin < 0)
@@ -292,6 +301,9 @@ class VolumeGenerator {
                         vOffset = vMin;
                     vVelocityArray[x][y][z] += vOffset;
                     vVelocityArray[x][y][z] *= (1/ Math.abs(vMax - vMin));
+                    vVelocityArray[x][y][z] -= 0.5f;
+                    vVelocityArray[x][y][z] *= 2f;
+                    vVelocityArray[x][y][z] = 0;
                     //vVelocityArray[x][y][z] -= 0.5f;
                     float wOffset = -1 * wMin;
                     if(wMin < 0)
@@ -300,6 +312,8 @@ class VolumeGenerator {
                         wOffset = wMin;
                     wVelocityArray[x][y][z] += wOffset;
                     wVelocityArray[x][y][z] *= (1/ Math.abs(wMax - wMin));
+                    wVelocityArray[x][y][z] -= 0.5f;
+                    wVelocityArray[x][y][z] *= 2f;
                     //wVelocityArray[x][y][z] -= 0.5f;
                     if(wVelocityArray[x][y][z] > max) max = wVelocityArray[x][y][z];
                     if(wVelocityArray[x][y][z] < min) min = wVelocityArray[x][y][z];
@@ -307,7 +321,7 @@ class VolumeGenerator {
                 }
             }
         }
-        System.out.println("Max min diff: " + max + " " +  min);
+        //System.out.println("Max min diff: " + max + " " +  min);
 
         /*
         for(int x = 0; x < size; x++){
@@ -507,9 +521,9 @@ class VolumeGenerator {
                 }
             }
         }
-        System.out.println("Min and max");
-        System.out.println(min);
-        System.out.println(max);
+        //System.out.println("Min and max");
+        //System.out.println(min);
+        //System.out.println(max);
         //System.out.println(voxOutputArray[60][60][60]);
         System.out.println(".");
     }

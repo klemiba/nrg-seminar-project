@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9f2c753-4fe1-40d5-b690-a9c27acdf6df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/Double Blue TF.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/generateVolume.out" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/generateVolume.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/artifacts/procedural_generation_of_volumetric_fluid_environemt_jar/procedural-generation-of-volumetric-fluid-environemt.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/artifacts/procedural_generation_of_volumetric_fluid_environemt_jar/procedural-generation-of-volumetric-fluid-environemt.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/VolumeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/out/production/procedural-generation-of-volumetric-fluid-environemt/VolumeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/FastNoise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/FastNoiseLite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/PerlinNoiseGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/TransferFunction (4).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumetricFluidProceduralGenerator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumetricFluidProceduralGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/VolumetricFluidProceduralGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/output/TransferFunction (4).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procedural-generation-of-volumetric-fluid-environemt/src/output/TransferFunction (6).json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/glsl/shaders.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/glsl/shaders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/glsl/renderers/MCMRenderer.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/glsl/renderers/MCMRenderer.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +44,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,7 +55,8 @@
       <workItem from="1621278751075" duration="25321000" />
       <workItem from="1621352675632" duration="976000" />
       <workItem from="1621358137592" duration="2478000" />
-      <workItem from="1621466331532" duration="3091000" />
+      <workItem from="1621466331532" duration="3686000" />
+      <workItem from="1621610519253" duration="811000" />
     </task>
     <servers />
   </component>
